@@ -12,16 +12,16 @@ var app    = express()
 
 var DB = new GameStore();
 
-var cookieParser = express.cookieParser('I wish you were an oatmeal cookie')
+var cookieParser = express.cookieParser('This is a cookie parser')
   , sessionStore = new express.session.MemoryStore();
 
 // Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3002);
+app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0");
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 // Middleware
-app.use(express.favicon(__dirname + '/public/img/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(cookieParser);

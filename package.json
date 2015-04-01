@@ -1,7 +1,5 @@
 {
-  "name": "socket.io-chess",
-  "version": "0.2.0",
-  "private": true,
+  "name": "nodejs-chess",
   "scripts": {
     "start": "node server.js"
   },
